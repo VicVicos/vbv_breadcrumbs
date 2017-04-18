@@ -1,0 +1,21 @@
+.breadcrumb {
+    padding-left: 0;
+}
+.breadcrumb li {
+    display: inline-block;
+    list-style: none;
+    padding-left: 3px;
+}
+.breadcrumb li::after {
+    content: '/';
+    padding-left: 6px;
+}
+.breadcrumb li.active::after {
+    content: '';
+}
+.breadcrumb li a {
+    color: #333;
+}
+.breadcrumb li a:hover {
+    text-decoration: underline;
+}

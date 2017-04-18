@@ -11,6 +11,11 @@ include_once dirname( __FILE__ ) . '/class.BreadcrumbsAction.php';
 register_activation_hook(__FILE__, array( 'BreadcrumbsAction', 'BreadcrumbsActivate' ));
 register_deactivation_hook(__FILE__, array('BreadcrumbsAction', 'BreadcrumbsDeactivate'));
 
+function plugin_styles() {
+    wp_enqueue_style( 'vbv_styles', plugins_url('/assets/css/styles.css', __FILE__) );
+}
+add_action('wp_enqueue_scripts', 'plugin_styles');
+
 function the_breadcrumbs() {
     /* === ОПЦИИ === */
     $text['home'] = 'Главная'; // текст ссылки "Главная"
